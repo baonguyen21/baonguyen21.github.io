@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bao Nguyen</title>
+    <link>/</link>
+    <description>Recent content on Bao Nguyen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First_post</title>
+      <link>/posts/first_post/</link>
+      <pubDate>Fri, 13 Mar 2020 15:27:30 -0700</pubDate>
+      
+      <guid>/posts/first_post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>I am an undergraduate electrical engineering student at Oregon State Unversity. I am interested in digital logic design and device physic and wanted to go on the IC design track at OSU. I am also pursuing a minor in Computer Science and Chemistry.
+In the past year, I have been working at the OSU OpenSening Lab where I led a team in hardware design to make a DNA sampling machine from scratch.</description>
+    </item>
+    
+    <item>
+      <title>Junior Design</title>
+      <link>/projects/juniordesign/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/juniordesign/</guid>
+      <description>For our final funior design project, our team made a solar charger that take in power from a 170W solar panel to charge:
+ Sealed Lead-Acid battery Li-ion battery USB-C device with USB PD compliant  The charger follow the charging curve of the battery using constant current, constant voltage, and floating phase. I was in charged of design, fabricate and testing the main charging PCB. I also wrote the Graphical User Interface using Tkinter on Python 3.</description>
+    </item>
+    
+  </channel>
+</rss>
