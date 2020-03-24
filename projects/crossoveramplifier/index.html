@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Hugo Authors]">
+<meta name="description" content="In Winter term 2019, I was taking the Fundamental Electrical course where my teammate and I got to design filters with amplifier for speakers. The goal in this lab was to design and build a functioning 3-range speaker system (high range, low range, and mid-range) using a high pass, low pass and band pass filter with an amplifier for each of the filters. It was to gain more understanding of how a filter works, how to apply a schematic to build a circuit on a breadboard or solder it onto a perfboard." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="/projects/crossoveramplifier/" />
+
+
+    <title>
+        
+            Crossover Amplifier :: Bao Nguyen  — A simple theme for Hugo
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.7bfbbe12786fa0ded4b4c0d792cbb36a5bd0bdb0b856dde57aa7b1f6fe0f2b87.css">
+
+
+
+
+<meta itemprop="name" content="Crossover Amplifier">
+<meta itemprop="description" content="I made a crossover amplifier">
+<meta itemprop="datePublished" content="2019-03-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="443">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Crossover Amplifier"/>
+<meta name="twitter:description" content="I made a crossover amplifier"/>
+
+
+
+    <meta property="article:section" content="Development" />
+
+    <meta property="article:section" content="golang" />
+
+
+
+    <meta property="article:published_time" content="2019-03-28 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Bao Nguyen</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/projects/crossoveramplifier/">Crossover Amplifier</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>In Winter term 2019, I was taking the Fundamental Electrical course where my teammate and I got to design filters with amplifier for speakers. The goal in this lab was to design and build a functioning 3-range speaker system (high range, low range, and mid-range) using a high pass, low pass and band pass filter with an amplifier for each of the filters. It was to gain more understanding of how a filter works, how to apply a schematic to build a circuit on a breadboard or solder it onto a perfboard.</p>
+<p align="center"><img width="75%" src="/image/crossampfinish.jpg"></p>
+<p>We start by calculating the cut off frequency for each filter base on audible range for human. We then use the biggest ceramic capacitor we can get so that our resistor value can be low. The resistor value is calculated using R=1/(2pi<em>f</em>C). The biggest ceramic capacitor we have at hand are 0.33 microF. With the calculated R, we try to find a resistor network based on the lab supply.</p>
+<details>
+<summary>Design Constaints</summary>
+The final product need to utilize 3 LM386s for each output, 4 electrolytic capacitors, 7 ceramic capacitors, resistors, a switch, and a LED. All of these component need to fit on a 9.5cm x 5cm perfboard.
+</details>
+</br>
+<details>
+<summary>Issue 1</summary>
+Calculation and stimulation were run on LTspice to check the corner frequency at -3dB with off the shelf values for capacitors and resistors.
+<p>However, we realized that we were not using the real capacitance value, so we need to go back and recalculate with the real capacitance of around 0.28 microF. Real resistance value also taken into account. We end up modifying the resistor network and also rerun the stimulation. After that, we prototype the circuit on a breadboard, and test with the oscilloscope with function generator as the input. The output was expected, so we start adding the amplifier IC LM386 with DC blocking capacitor at the output. The LM386 is powered by a 12V bench power supply. The low pass, and high pass circuit give us somewhat clean noise.</p>
+</details>
+</br>
+<details>
+<summary>Issue 2</summary>
+When prototyping with the breadboard, the low pass and high pass circuit give us somewhat clean noise, but the bandpass show some constant frequency no matter the input.
+<p>We change out different DC filtering capacitor at the output for the mid-IC. However, we still get constant frequency output even without any signal input from the phone. We return the circuit back to the original design. Then a junior student comes over and helps us add a 10microF between the power input for the ICs, and we got clean sound out of the speaker outputs. <strong>So …. we forgot to add a decoupling capacitor.</strong></p>
+</details>
+<p align="center"><img width="100%" src="/image/CrossSchematic.jpg"></p>
+<p>And here is the final product</p>
+<p align="center"><img width="75%" src="/image/crossampfinish.jpg"></p>
+</br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/ud9lH3SLBWo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</br>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/CtLhw0Krvjg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.a3a6422c179bd149ecbc2be423458ce78eb125497ce2769eb6526c1a06dd9addccb771d7f4aeaa017fe6f5dc1cdc8af43bb78d3bfe31b3b6eb641604d6544cba.js" integrity="sha512-o6ZCLBeb0UnsvCvkI0WM546xJUl84naetlJsGgbdmt3Mt3HX9K6qAX/m9dwc3Ir0O7eNO/4xs7brZBYE1lRMug=="></script>
+
+
+
+    </body>
+</html>

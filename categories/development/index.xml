@@ -31,5 +31,25 @@ In the past year, I have been working at the OSU OpenSening Lab where I led a te
  Sealed Lead-Acid battery Li-ion battery USB-C device with USB PD compliant  The charger follow the charging curve of the battery using constant current, constant voltage, and floating phase. I was in charged of design, fabricate and testing the main charging PCB. I also wrote the Graphical User Interface using Tkinter on Python 3.</description>
     </item>
     
+    <item>
+      <title>Crossover Amplifier</title>
+      <link>/projects/crossoveramplifier/</link>
+      <pubDate>Thu, 28 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/crossoveramplifier/</guid>
+      <description>In Winter term 2019, I was taking the Fundamental Electrical course where my teammate and I got to design filters with amplifier for speakers. The goal in this lab was to design and build a functioning 3-range speaker system (high range, low range, and mid-range) using a high pass, low pass and band pass filter with an amplifier for each of the filters. It was to gain more understanding of how a filter works, how to apply a schematic to build a circuit on a breadboard or solder it onto a perfboard.</description>
+    </item>
+    
+    <item>
+      <title>Bio Reactor Control Board</title>
+      <link>/projects/bioreactor/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/bioreactor/</guid>
+      <description>The circuit that I made is to control two 12v peristaltic pumps with the information from a temperature sensor and a liquid pressure sensor. The brain of the project is an Arduino Nano which runs directly on a 12v power supply.
+Feature
+ Programable with Arduino NANO x2 speed control for peristaltic pump x1 waterproof DS18B20 temperature sensor x1 PendoTECH inline pressure sensor x2 interupt buttons  How did I start?</description>
+    </item>
+    
   </channel>
 </rss>

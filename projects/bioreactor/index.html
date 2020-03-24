@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="map[name:Hugo Authors]">
+<meta name="description" content="The circuit that I made is to control two 12v peristaltic pumps with the information from a temperature sensor and a liquid pressure sensor. The brain of the project is an Arduino Nano which runs directly on a 12v power supply.
+Feature
+ Programable with Arduino NANO x2 speed control for peristaltic pump x1 waterproof DS18B20 temperature sensor x1 PendoTECH inline pressure sensor x2 interupt buttons  How did I start?" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="/projects/bioreactor/" />
+
+
+    <title>
+        
+            Bio Reactor Control Board :: Bao Nguyen  — A simple theme for Hugo
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.7bfbbe12786fa0ded4b4c0d792cbb36a5bd0bdb0b856dde57aa7b1f6fe0f2b87.css">
+
+
+
+
+<meta itemprop="name" content="Bio Reactor Control Board">
+<meta itemprop="description" content="I made a Bio Reactor Control Board">
+<meta itemprop="datePublished" content="2019-03-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-03-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="489">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Bio Reactor Control Board"/>
+<meta name="twitter:description" content="I made a Bio Reactor Control Board"/>
+
+
+
+    <meta property="article:section" content="Development" />
+
+    <meta property="article:section" content="golang" />
+
+
+
+    <meta property="article:published_time" content="2019-03-07 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Bao Nguyen</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/projects">Projects</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/projects/bioreactor/">Bio Reactor Control Board</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>The circuit that I made is to control two 12v peristaltic pumps with the information from a temperature sensor and a liquid pressure sensor. The brain of the project is an Arduino Nano which runs directly on a 12v power supply.</p>
+<p align="center"><img width="70%" src="/image/controlboard.jpg"></p>
+<p><strong>Feature</strong></p>
+<ul>
+<li>Programable with Arduino NANO</li>
+<li>x2 speed control for peristaltic pump</li>
+<li>x1 waterproof DS18B20 temperature sensor</li>
+<li>x1 PendoTECH inline pressure sensor</li>
+<li>x2 interupt buttons</li>
+</ul>
+<h2 id="how-did-i-start">How did I start?</h2>
+<p>My honor college mentor was working on her college thesis which involves making a microbioreactor that periodically feeds the culture with a nutrious solution. She reached out to me just to ask about Arduino and share what she is working on. I was so excited and offer to design the circuit as a chance to practice my electronic skills. So here is how I do it.</p>
+<h2 id="the-process">The process</h2>
+<p>Originally I planned to use PN2222 transistor and relay to control motors. Because the motor only draws around 400mA at 12V and the ability to control the speed of the motor, we could use a bigger transistor. Leaving room for improvement and upgrade to a bigger motor, I have decided to go with <a href="https://www.st.com/resource/en/datasheet/cd00002501.pdf">N-Channel MOSFET STP16NF06</a>. The temperature sensor was a <a href="https://www.adafruit.com/product/381?gclid=EAIaIQobChMIzOzrnvbX3wIVYh6tBh1vhAzMEAQYBCABEgIm4vD_BwE">DS18B20 from Adafruit</a> so the schematic and code were provided to us.</p>
+<p>All of that was easy until we take a look at PendoTECH pressure sensor pinout and <a href="http://www.pendotech.com/products/disposable_pressure_sensors/Pressure_Sensors_Spec_Sheet.pdf">datasheet</a>. This was my first time seeing a sensor with 4 pinout instead of the digital 3 pins like the temperature sensor. Luckily, my friend bought a <a href="https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all">HX711 Load Cell Amplifier</a> board for a DIY scale that use Wheatstone Bridge and only four output pins. The HX711 library and wiring instruction is provided on the <a href="https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide/all">SparkFun website</a>.</p>
+<p align="center"><img width="40%" src="/image/loadcell.jpg"></p>
+<p>So I tried to plug in the pressure sensor and it worked, but with a lot of calibration, compared to the sensitivity of the load cells. Seem like the pressure sensor using HX711 board has high accuracy and low precision. Its accuracy is around ±300 pascal which is 0.002 atm, suitable for my mentor’s application.</p>
+<h2 id="put-everything-together">Put everything together</h2>
+<p>Here is my first schematic.</p>
+<p align="center"><img width="70%" src="/image/bio-scheme-notworking.jpg"></p>
+<p>In this design, the <strong>interrupt buttons did not work</strong> no matter what code I use. The issue came from my circuit flaw when I use a pull-down resistor instead of pull-up. So here is the working schematic.</p>
+<p align="center"><img width="70%" src="/image/bio-scheme-working.jpg"></p>
+<h2 id="the-code">The Code</h2>
+<p>Retrieve code from <a href="https://www.codepile.net/pile/7V5JQwxm">CodePile</a></p>
+<h2 id="endnote">Endnote</h2>
+<img align="right" src="/image/bio-back.jpg" width="40%">
+<p>I was suggested to use H-bridge to control the motors. However, based on the nearby store’s supply and simplicity of wiring, I do think using transistor or MOSFET is a better choice.</p>
+<p>More improvement can be made on my soldering. I can use better solder and appropriate temperature for the soldering iron.</p>
+<p>My mentor thought that the circuit is awesome for the projects and she planned to upgrade more sensors in the future to automate more bioreactor. I am really happy that someone that I respect enjoys my work, and looking forward to the further development of the system.</p>
+</details>
+</br>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.a3a6422c179bd149ecbc2be423458ce78eb125497ce2769eb6526c1a06dd9addccb771d7f4aeaa017fe6f5dc1cdc8af43bb78d3bfe31b3b6eb641604d6544cba.js" integrity="sha512-o6ZCLBeb0UnsvCvkI0WM546xJUl84naetlJsGgbdmt3Mt3HX9K6qAX/m9dwc3Ir0O7eNO/4xs7brZBYE1lRMug=="></script>
+
+
+
+    </body>
+</html>
