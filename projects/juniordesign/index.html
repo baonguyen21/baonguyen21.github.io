@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="map[name:Hugo Authors]">
-<meta name="description" content="For our final funior design project, our team made a solar charger that take in power from a 170W solar panel to charge:
+<meta name="description" content="For our final junior design project, our team of 3 made a solar charger that take in power from a 170W solar panel to charge:
  Sealed Lead-Acid battery Li-ion battery USB-C device with USB PD compliant  The charger follow the charging curve of the battery using constant current, constant voltage, and floating phase. I was in charged of design, fabricate and testing the main charging PCB. I also wrote the Graphical User Interface using Tkinter on Python 3." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -15,7 +15,7 @@
 
     <title>
         
-            Junior Design :: Bao Nguyen  — A simple theme for Hugo
+            Solar Charger - Junior Design Project :: Bao Nguyen  — A simple theme for Hugo
         
     </title>
 
@@ -31,11 +31,11 @@
 
 
 
-<meta itemprop="name" content="Junior Design">
+<meta itemprop="name" content="Solar Charger - Junior Design Project">
 <meta itemprop="description" content="We made a solar charger">
 <meta itemprop="datePublished" content="2020-03-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="98">
+<meta itemprop="wordCount" content="201">
 <meta itemprop="image" content="/"/>
 
 
@@ -43,7 +43,7 @@
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
-<meta name="twitter:title" content="Junior Design"/>
+<meta name="twitter:title" content="Solar Charger - Junior Design Project"/>
 <meta name="twitter:description" content="We made a solar charger"/>
 
 
@@ -87,7 +87,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/projects">Projects</a></li>
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/projects">Projects</a></li><li><a href="/resume">Resume</a></li>
     </ul>
 </nav>
 
@@ -120,19 +120,34 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/projects/juniordesign/">Junior Design</a></h2>
+            <h2 class="post-title"><a href="/projects/juniordesign/">Solar Charger - Junior Design Project</a></h2>
 
             
 
             <div class="post-content">
-                <p>For our final funior design project, our team made a solar charger that take in power from a 170W solar panel to charge:</p>
+                <p>For our final junior design project, our team of 3 made a solar charger that take in power from a 170W solar panel to charge:</p>
 <ul>
 <li>Sealed Lead-Acid battery</li>
 <li>Li-ion battery</li>
 <li>USB-C device with USB PD compliant</li>
 </ul>
 <p>The charger follow the charging curve of the battery using constant current, constant voltage, and floating phase. I was in charged of design, fabricate and testing the main charging PCB. I also wrote the Graphical User Interface using Tkinter on Python 3. The charging algorithm is on an Arduino Nano and the GUI is running on a Raspberry Pi Zero W.</p>
+<p>Here is my schematic capture, board layout, and GUI on Tkinter. The design does not have size as the main constraint. The width of the board is set to support another add-on PCB by another teammate for USB C PD.
+<img src="/image/solarschematic.png" alt="SolarSchematic"></p>
+<p><img src="/image/solarpcb.png" alt="SolarPCB"></p>
+<p>Here is the finished product!</p>
+<p><img src="/image/solarbox.jpg" alt="SolarBox"></p>
+<p>Due to time constraint, there are some safety features should be added to the system even for DIY use at home:</p>
+<ul>
+<li>Mounting holes on PCB</li>
+<li>Reduced component cost</li>
+<li>Reverse votlage protection for solar input and battery input</li>
+<li>Floating charge capability</li>
+<li>USB-C Power Delivery 3.0 at 100W</li>
+<li>Power cut off for battery when undervoltage</li>
+</ul>
 <p>System Artifacts: <a href="/JD_FP_Artifacts.zip">Link</a></p>
+<p>Team Poster: <a href="/solar17-poster.pdf">Solar-17</a></p>
 
             </div>
         </article>

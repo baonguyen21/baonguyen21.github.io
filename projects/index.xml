@@ -12,13 +12,33 @@
     
     
     <item>
-      <title>Junior Design</title>
+      <title>Solar Charger - Junior Design Project</title>
       <link>/projects/juniordesign/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/projects/juniordesign/</guid>
-      <description>For our final funior design project, our team made a solar charger that take in power from a 170W solar panel to charge:
+      <description>For our final junior design project, our team of 3 made a solar charger that take in power from a 170W solar panel to charge:
  Sealed Lead-Acid battery Li-ion battery USB-C device with USB PD compliant  The charger follow the charging curve of the battery using constant current, constant voltage, and floating phase. I was in charged of design, fabricate and testing the main charging PCB. I also wrote the Graphical User Interface using Tkinter on Python 3.</description>
+    </item>
+    
+    <item>
+      <title>eDNA Sampler</title>
+      <link>/projects/ednasampler/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/ednasampler/</guid>
+      <description>The first project lead was Kawin Pechetratanapanit for the embedded software and myself for hardware (mechanical and electrical). I designed electrical hardware from the Logic to the Power module. Furthermore, I also design the first version of the sampler from tubing to filter design. The project was aimed to reduce labor costs and long sampling duration for a remote location.
+Overview Organisms leave traces of DNA as they move through their environments.</description>
+    </item>
+    
+    <item>
+      <title>OpenSampler</title>
+      <link>/projects/watersampler/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/watersampler/</guid>
+      <description>OpenSampler is designed to be an Open Source fully-automated water sampler that allows a greater degree of customization and the ability to add external sensor of choice. I was in charge of the electronics and advising the overall mechanical design. The code was adopted from the eDNA with some customization.
+More detail More about this project can be found on OpenSensing Lab Wiki.</description>
     </item>
     
     <item>
