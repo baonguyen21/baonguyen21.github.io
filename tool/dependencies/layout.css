@@ -1,0 +1,130 @@
+@charset "utf-8";
+/*
+Template Name: Vendor
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Layout CSS
+*/
+
+/* Rows
+---------------------------------------------------------------------------------------------------------------*/
+.row0, .row0 a{}
+.row1, .row1 a{}
+.row2, .row2 a{}
+.row3, .row3 a{font-family: sans-serif; padding: 0 40px}
+.row4{border-top:10px solid;}
+.row5{border-top:1px solid;}
+
+/* Header
+---------------------------------------------------------------------------------------------------------------*/
+#header{padding:35px 0; text-align:center; font-family: sans-serif; font-style: normal;}
+
+/* Content Area
+---------------------------------------------------------------------------------------------------------------*/
+#container{padding:50px 0;}
+
+/* Content */
+#container #content{}
+.tab { margin-left: 40px; }
+
+/* Copyright
+---------------------------------------------------------------------------------------------------------------*/
+#copyright{padding:30px 0;}
+#copyright p{margin:0; padding:0;}
+
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+
+/* Forms
+---------------------------------------------------------------------------------------------------------------*/
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+label, input, textarea, select{display:block; resize:none; font-size:inherit; box-sizing:border-box;}
+label{margin-bottom:5px;}
+
+/* Tables
+---------------------------------------------------------------------------------------------------------------*/
+table.table1, th, td{border:1px solid; border-collapse:collapse; vertical-align:top; box-sizing:border-box;}
+table.table1, th{table-layout:auto;}
+/* table{margin-bottom:15px;} */
+table.table1 th, td{padding:5px 8px;}
+table.table1 td{border-width:0 1px;}
+
+/* make the table a 100% wide by default */
+table.table1 {
+width: 100%;
+margin-bottom:15px;}
+
+/* if the browser window is at least 800px-s wide: */
+
+
+/* if the browser window is at least 1000px-s wide: */
+@media screen and (min-width: 1000px) {
+  table.table1 {
+  width: 900px;
+  margin-bottom:15px;}
+}
+
+/*-----------------------------------------------------*/
+
+table.table2, th, td{border:1px solid; border-collapse:collapse; vertical-align:top; box-sizing:border-box;}
+table.table2, th{table-layout:auto;}
+/* table{margin-bottom:15px;} */
+table.table2 th, td{padding:5px 8px;}
+table.table2 td{border-width:0 1px;}
+
+/* make the table a 100% wide by default */
+table.table2 {
+width: 100%;
+margin-bottom:15px;}
+
+
+
+/* if the browser window is at least 1000px-s wide: */
+
+
+/* and so on... */
+
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------*/
+
+
+/* Colours63CAC6
+---------------------------------------------------------------------------------------------------------------*/
+
+body{color:#888888; background-color:#292929;}
+
+a{color:#63CAC6;}
+
+hr, .borderedbox{border-color:#D7D7D7;}
+
+label span{color:#FF0000; background-color:inherit;}
+
+
+/* Rows */
+.row1, .row1 a{color:#EFEFEF; background-color:#35618d; min-width: 580px;}
+.row2, .row2 a{color:#FFFFFF; background-color:#D7D7D7;}
+.row3{color:#888888; background-color:#FFFFFF; min-width: 500px;}
+.row4{color:#E8E8E8; background-color:#273727; border-color:#292929;}
+.row5, .row5 a{color:#888888; background-color:#35618d;}
+.row5{border-color:#575757;}
+
+/* Footer */
+#footer .title{border-color:#292929;}
+
+/* Tables + Comments */
+table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
+th{color:#FFFFFF; background-color:#373737;}
+tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
+tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
+table a, #comments a{background-color:inherit;}

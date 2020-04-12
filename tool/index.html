@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://oregonembedded.com/batterycalc.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+<meta name="keywords" content="battery life calculator, calculate battery life, battery, calculator">
+<meta name="description" content="This online calculator estimates of the life of a battery in a low power sensor environment">
+<title>Battery Life Calculator</title>
+
+<link href="./dependencies/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<script src="./dependencies/batterylife.js" type="text/javascript"></script>
+<div class="wrapper row1">
+<header id="header" class="clear">
+<div id="logo"> 
+<h1>Electronic Tools</h1> 
+</div> 
+</div>
+<!--
+<nav id="mainav"> <ul class="clear"> <li class="active"><a href="https://oregonembedded.com/index.html">Home</a></li> <li><a href="https://oregonembedded.com/datasheets">Datasheets</a></li> </nav> </header> </div>    
+-->
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- 
+
+ var onms = form.wakedurationms.value*form.wakesperhour.value;
+ var onma = form.consump.value;
+
+ var offms = 3600000-onms;
+ var offma = form.offconsump.value;
+
+ var realma=((onma*onms)+(offma*offms))/3600000;
+
+ var lifeda = (modRat/realma)/24;
+ var lifeyr = lifeda/365
+
+ --> 
+
+
+<div class="wrapper row3">
+  <main id="container" class="clear"> 
+    <h2 class="tab">Battery Life Calculator</h2>
+
+<form name="battery_life" action="/">
+<table class="table1" cellpadding="5" style="text-align: center;">
+ <tbody>
+  <tr>
+   <td> Capacity rating of battery (mAh) </td>
+   <td> <input name="rating" value="240" size="5" onblur="validate_zero_empty(this)" type="text"></td>
+   <td>mAh = milli-Amp-hours</td>
+ </tr>
+ <tr>
+   <td> Current consumption of device during sleep (mA)</td>
+   <td> <input name="offconsump" value="0.02" size="5" onblur="validate_zero_empty(this)" type="text"></td>
+   <td>mA = milli-Amps</td>
+ </tr>
+ <tr>
+  <td> Current consumption of device during wake (mA)</td>
+  <td> <input name="consump" value="5" size="5" onblur="validate_zero_empty(this)" type="text"></td>
+  <td>mA = milli-Amps</td>
+ </tr>
+ <tr>
+  <td> Number of wakeups per hour</td>
+  <td><input name="wakesperhour" value="1" size="5" onblur="validate_zero_empty(this)" type="text"></td>
+  <td>If always on, enter 1 here.</td>
+ </tr>
+ <tr>
+  <td>Duration of wake time (ms)</td>
+  <td><input name="wakedurationms" value="3600000" size="5" onblur="validate_zero_empty(this)" type="text"></td>
+  <td>ms = milli-Seconds. If always on, enter 3600000 here.</td>
+ </tr>
+  <tr>
+  <td>Discharge rate %/month</td>
+  <td><input name="dischargerate" value="5" size="5" onblur="validate_empty(this)" type="text"></td>
+  <td>Percent per month</td>
+ </tr>
+ <tr>
+  <td><center> <input name="cmdcalc" value="Calculate" onclick="calculate(this.form)" type="button"></center></td> 
+ </tr> 
+</tbody>
+</table>
+</form>
+
+<p class="tab">The output of this calculator is an estimate, not a guarantee.<br>
+Other factors such as temperature can extend or shorten the battery
+life.</p>
+
+<p class="tab">If the device only wake up x times a day. Calculate wakeup per hour: <br>
+Wakeup per hour = x / 24 <br>
+Example: 3 times a day => wakeup per hour = 3/24 = 0.125 </p>
+
+
+<table border="0" cellpadding="1" cellspacing="0" style="text-align: center;">
+  <tr>
+    <th>Battery System</th>
+    <th>Estimated self-discharge</th>
+  </tr>
+  <tr>
+    <td>Primary lithium-metal</td>
+    <td>10% in 5 years</td>
+  </tr>
+  <tr>
+    <td>Alkaline</td>
+    <td>2–3% per year (7-10 years shelf life)</td>
+  </tr>
+  <tr>
+    <td>Lead-acid</td>
+    <td>5% per month</td>
+  </tr>
+  <tr>
+    <td>Nickel-based</td>
+    <td>10–15% in 24h, then 10-15% per month</td>
+  </tr>
+  <tr>
+    <td>Lithium-ion</td>
+    <td>5% in 24h, then 1–2% per month (plus 3% for safety circuit)</td>
+  </tr>
+</table>
+
+<p><b><font size="+1">mAHr Capacity of typical
+batteries that we're
+likely to use:<br>
+</font></b></p>
+<p>
+</p><table class="table1" border="1" cellpadding="0" cellspacing="0" width="450";>
+<tbody>
+<tr>
+<td width="20%"> &nbsp;AAA</td>
+<td width="80%"> 1200 (Alkaline)<br>
+800–1000 (NiMH)</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;AA</td>
+<td width="80%"> 2700 (alkaline)<br>
+3000 (Lithium-Rechargeable)<br>
+1700–2900 (NiMH)</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;C</td>
+<td width="80%"> 8000 (alkaline)<br>
+4500–6000 (NiMH)</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;D</td>
+<td width="80%"> 12000 (alkaline)<br>
+2200–12000 (NiMH)<br>
+19000 (Lithium-Primary) 3.6V</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;6V Lantern</td>
+<td width="80%"> 26000 (alkaline)</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;CR2032</td>
+<td width="80%"> 240 (Lithium-Primary) 3.6V</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;CR2016</td>
+<td width="80%"> 90 (Lithium-Primary) 3.6V</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;1/10 D</td>
+<td width="80%"> 1000 (Lithium-Primary) 3.6V</td>
+</tr>
+<tr>
+<td width="20%"> &nbsp;4 Farad Cap</td>
+<td width="80%"> 1 (loses 1 volt in 1 hour at 1mA)</td>
+</tr>
+</tbody>
+</table>
+<br><br>
+<p><b><font size="+1">The Basic Formula:<br>
+</font></b></p>
+   <table class="table2" cellpadding="2" width="100%"; >
+	<tbody>
+     <tr>	 
+	  <td>C = Capacity rating of battery</td>
+	  <td>Milliamp hours (mAh)</td>
+     </tr>
+     <tr>	 
+	  <td>Asleep = Current of the device when sleeping</td>
+	  <td>Milliamps</td>
+     </tr> 
+	 <tr>	 
+	  <td>Awake = Current of the device when awake</td>
+	  <td>Milliamps</td>
+     </tr> 
+	 <tr>	 
+	  <td>WakePerh = Number of wakeups per hour</td>
+	  <td> </td>
+     </tr>  
+	 <tr>	 
+	  <td>WakeTime = Duration of a single wake</td>
+	  <td>Milliseconds</td>
+     </tr> 
+     <tr>
+      <td></td>
+	 </tr> 
+	 <tr>     
+	  <td>Adischarge = %/month * C / 100 / 730</td>
+      <td>Self-discharge current in Milliamps</td>
+     </tr> 
+     <tr>	
+	  <td>3,600,000</td>
+	  <td>How many milliseconds are in an hour</td>
+	 </tr> 
+	 <tr>     
+	  <td>TimeWakePerh = WakePerh*WakeTime</td>
+      <td>Wake time per hour</td>
+     </tr>
+	 <tr>     
+	  <td>TimeSleepPerh = 3,600,000-WakeTimePerH</td>
+      <td>Sleep time per hour</td>
+     </tr>
+	 <tr>     
+	  <td>Aaverage = ((Awake+Adischarge)*TimeWakePerh+(Asleep+Adischarge)*TimeSleepPerh) / 3,600,000  </td>
+      <td>Current on average (milliamps)</td>
+     </tr> 	 
+	 <tr> 
+      <td></td>
+	 </tr>
+     <tr> 
+      <td>days = (Capacity/Aaverage)/24</td>
+	  <td>life of battery, expressed in days</td>
+	 </tr>
+     <tr> 
+      <td>months = days/30.5</td>
+	  <td>life of battery, expressed in months</td>
+	 </tr> 	 
+    <tr> 
+      <td>years = days/365</td>
+	  <td>life of battery, expressed in years</td>
+	 </tr> 	
+	</tbody>
+   </table> 
+	 
+
+
+
+    <!-- ########################################################################################## --> 
+    <!-- / container body -->
+<p></p>
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ --> 
+<div class="wrapper row5"> <div id="copyright" class="clear"> <p class="fl_left" style="color:white;">Copyright © 2019 - <a style="color:white;" href="https://oregonembedded.com/batterycalc.htm#">www.oregonembedded.com</a></p></div> </div>  
+<!-- JAVASCRIPTS --> 
+
+
+
+
+</body></html>
