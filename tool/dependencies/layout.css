@@ -102,8 +102,8 @@ label span{color:#FF0000; background-color:inherit;}
 .row2, .row2 a{color:#FFFFFF; background-color:#D7D7D7;}
 .row3{color:#888888; background-color:#FFFFFF; min-width: 500px;}
 .row4{color:#E8E8E8; background-color:#273727; border-color:#292929;}
-.row5, .row5 a{color:#888888; background-color:#35618d;}
-.row5{border-color:#575757; width: 100%}
+.row5, .row5 a{color:#888888; background-color:#35618d; min-width: 580px;}
+.row5{border-color:#575757; min-width: 580px;}
 
 /* Footer */
 #footer .title{border-color:#292929;}
