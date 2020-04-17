@@ -75,6 +75,31 @@ life.</p>
 Wakeup per hour = x / 24 <br>
 Example: 3 times a day => wakeup per hour = 3/24 = 0.125 </p>
 
+<p><b><font size="+1">How to use this tool<br>
+</font></b></p>
+
+<p class="tab">
+Capacity rating of battery: Given on the listing or the outside of your battery. The unit for this is usually mAh for small battery <br>
+and Ah for a larger battery (like a car battery) <br>
+<br>
+Current consumption of device during sleep: Measured between the battery terminal and the device at sleep to get the actual <br>
+consumption current. This current is more accurate than adding up all of the peripheral currents. Peripheral currents working <br> 
+at different voltage and lost in DC-DC conversion can lead to the wrong current at the battery terminal. <br>
+<br>
+Current consumption of device during wake: Similar to the current during sleep, between the battery terminal and the device at wake. <br>
+If the current varies during wake due to spike, one needs to calculate or estimate the average current draw when awake. <br>
+<br>
+Number of wake up per hour: How many times does your device wake up and take in data. Twice every day = 2/24 wake per hour <br>
+<br>
+Duration of wake time: How long does your device stay awake in 1 hour. Max value is 3,600,000 ms. <br> 
+If your device wake up for 0.5 hours, twice everyday <br>
+Then wake time per hour  = 0.5 * 2 * 3,600,000 / 24. This is in milliseconds so make sure your unit is right. <br>
+<br>
+Discharge rate %/month: Battery will gradually lose its energy due to chemical reaction. Different type will have different <br>
+discharge rate base on their chemistry. See the table below for more information.
+</p>
+
+
 
 <table border="0" cellpadding="1" cellspacing="0" style="text-align: center;">
   <tr>
@@ -201,6 +226,10 @@ likely to use:<br>
 	 </tr> 	
 	</tbody>
    </table> 
+	 <br>
+	 <p><b><font size="+1">Reference<br></font></b></p>
+
+	 <p>How to Choose Battery <a href="https://www.rei.com/learn/expert-advice/batteries.html">www.rei.com/learn/expert-advice/batteries.html</a> </p>
 	 
     <!-- ########################################################################################## --> 
     <!-- / container body -->
