@@ -34,12 +34,16 @@ function validate_empty(field) {	//Does not allow empty
     }
 }
 
+
 function calculate(form) {
     var capRat = form.rating.value;
-    var modRat = capRat * .85;
+    //var modRat = capRat * .85;
+    // onms is wake time per hour. Should not exceed 3,600,000 ms (total number of ms in 1 hour)
     var onms = form.wakedurationms.value * form.wakesperhour.value;
     if (onms > 36e5) {
         onms = 36e5;
+        alert("Recheck your calculation, your \"Number of wakeups per hour\" or \"Duration of wake time\" is too large!");
+        return;
     }
     var selfDischargemAh = form.dischargerate.value * capRat / 100;
 	var selfDischargemA  = selfDischargemAh / 730	/* 730 hours per month */
